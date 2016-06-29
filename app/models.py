@@ -1,12 +1,14 @@
 from hashlib import md5
 from app import db
 from app import app
+from config import WOOSH_ENABLED
+
+enable_search = WOOSH_ENABLED
 
 import sys
 if sys.version_info >= (3, 0):
     enable_search = False
-else:
-    enable_search = True
+if enable_search:
     import flask.ext.whooshalchemy as whooshalchemy
 
 

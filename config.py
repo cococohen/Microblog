@@ -17,6 +17,8 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 WHOOSH_BASE = os.path.join(basedir, 'search.db')
 
+WOOSH_ENABLED = os.environ.get('HEROKU') is None #woosh does not work on Heroku
+
 # mail server settings
 MAIL_SERVER = 'plus.smtp.yahooemail.com'
 MAIL_PORT = 465
